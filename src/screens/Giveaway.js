@@ -112,9 +112,9 @@ export default class Giveaway extends React.Component {
     }
 
     _prepareAds = async () => {
-        const { unitID } = await Platform.OS === 'ios' ? 'ca-app-pub-1049504034926853/3144425559' : 'ca-app-pub-1049504034926853/7298668261';
-        AdMobRewarded.setTestDeviceID('EMULATOR');
+        const { unitID } = Platform.OS === 'ios' ? 'ca-app-pub-1049504034926853/3144425559' : 'ca-app-pub-1049504034926853/7298668261';
         AdMobRewarded.setAdUnitID(unitID);
+        AdMobRewarded.setTestDeviceID('EMULATOR');
         AdMobRewarded.addEventListener('rewardedVideoDidRewardUser', this._rewardUser );
         await AdMobRewarded.requestAdAsync();
     }
