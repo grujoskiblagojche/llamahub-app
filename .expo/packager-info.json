@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://t7-fb5.igrujoskiblagojche.llamahub-app.exp.direct",
-  "packagerNgrokUrl": "https://packager.t7-fb5.igrujoskiblagojche.llamahub-app.exp.direct",
-  "ngrokPid": 19238
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
