@@ -47,6 +47,15 @@ const Nav = props => (
                     <Icon name={ 'external-link-alt' } size={ 16 } color={ '#db8d2b' } />
                 </View>
             </TouchableOpacity>
+            <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => props.nav('GiveawayRules')}>
+                <View style={[ g.f_r, g.r_cv, { flex: 1 } ]}>
+                    <Icon name={ 'file-signature' } size={ 20 } color={ '#EDAF49' } />
+                    <Text style={[ t.opt, { color: '#111111' } ]}>Giveaway Rules</Text>
+                </View>
+                <View style={[ g.f, g.abs, u.linkIcon ]}>
+                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } />
+                </View>
+            </TouchableOpacity>
         </View>
         <View style={[ g.f_r, g.abs ]}>
             <Text style={ t.text }>Made with</Text>

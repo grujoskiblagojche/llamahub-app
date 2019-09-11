@@ -238,9 +238,9 @@ export default class Giveaway extends React.Component {
                                 <ActivityIndicator size="small" />
                             </View> }
                     
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('About')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('GiveawayRules')}>
                             <Text style={[ t.text, { padding: 10, paddingBottom: 15 } ]}>Check how to climb at
-                                <Text style={{ color: '#fff' }}> About llamaHub</Text>'s page.</Text>
+                                <Text style={{ color: '#fff' }}> Giveaway Rules</Text> page.</Text>
                         </TouchableOpacity>
                     </ScrollView>
                 </View>

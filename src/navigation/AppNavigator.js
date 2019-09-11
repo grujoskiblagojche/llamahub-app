@@ -11,6 +11,7 @@ import Compare from '../screens/Compare';
 import Giveaway from '../screens/Giveaway';
 import About from '../screens/About';
 import Privacy from '../screens/Privacy';
+import GiveawayRules from '../screens/GiveawayRules';
 
 const AppNavigator = createStackNavigator(
     {
@@ -23,7 +24,8 @@ const AppNavigator = createStackNavigator(
         Compare: { screen: Compare },
         Giveaway: { screen: Giveaway },
         About: { screen: About },
-        Privacy: { screen: Privacy }
+        Privacy: { screen: Privacy },
+        GiveawayRules: { screen: GiveawayRules }
     },
     {
         initialRouteName: 'Dashboard'

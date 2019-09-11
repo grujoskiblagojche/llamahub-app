@@ -90,10 +90,12 @@ export default class About extends React.Component {
                                 <Icon name={ 'dot-circle' } size={ 10 } color={ '#666' } itemIcon={ true } />
                                 <Text style={[ t.text, { paddingRight: 40 } ]}>Use the Giveaway Service to win a Free Gift each Friday. Enroll with your Epic Username and wait for the counter to finish!</Text>
                             </View>
-                            <View style={[ g.f_r, { marginLeft: 20 } ]}>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('GiveawayRules')}
+                                style={[ g.f_r, { marginLeft: 20 } ]}>
                                 <Icon name={ 'dot-circle' } size={ 10 } color={ '#666' } itemIcon={ true } />
-                                <Text style={[ t.text, { paddingRight: 40, marginBottom: 10, fontStyle: 'italic' } ]}>If you are Enrolled as our Next Winner, please send a friend-request to <Text style={{ color: '#f7f7f7' }}>app.llamaHub</Text> to tell us what would you like from the ItemShop ( can be a BattlePass or a Store Item ).</Text>
-                            </View>
+                                <Text style={[ t.text, { color: '#f7f7f7', fontStyle: 'italic', paddingRight: 40 } ]}>How it works ?</Text>
+                            </TouchableOpacity>
 
                         </View>
 
