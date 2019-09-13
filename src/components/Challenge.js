@@ -7,8 +7,8 @@ import t from '../ui/Typo';
 
 const Challenge = props => (
     <View style={[ g.f_r, g.spb, u.challenge ]}>
-        <View style={[ g.f_r, g.r_cv, { flex: 1 } ]}>
-            <Text style={ t.challenge }>{ props.challenge.title }</Text>
+        <View style={[ g.f_r, g.r_cv, { flex: 1, padding: 0 } ]}>
+            <Text style={[ t.challenge, { paddingLeft: 10, paddingRight: 10 } ]}>{ props.challenge.title }</Text>
         </View>
 
         { props.challenge.stars ?

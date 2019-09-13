@@ -12,7 +12,7 @@ export default class Header extends React.Component {
     state = {
         navToggle: false,
         navOpacity: new Animated.Value(0),
-        headerHeight: new Animated.Value(85)
+        headerHeight: new Animated.Value(75)
     }
 
     toggleNavHandler = () => {
@@ -21,7 +21,7 @@ export default class Header extends React.Component {
         Animated.parallel([
             Animated.timing( this.state.navOpacity, { toValue: val, duration: 400 }),
             Animated.timing( this.state.headerHeight, {
-                toValue: !this.state.navToggle ? Dimensions.get('window').height : 85,
+                toValue: !this.state.navToggle ? Dimensions.get('window').height : 75,
                 duration: 1,
                 delay: this.state.navToggle ? 400 : 0
             })
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         paddingTop: 25,
         width: '100%',
         backgroundColor: 'transparent',
-        zIndex: 10
+        zIndex: 100
     },
     header: {
         height: 60,

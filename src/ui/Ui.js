@@ -54,7 +54,7 @@ const u = StyleSheet.create({
     challenge: {
         width: '100%',
         height: 65,
-        paddingLeft: 10,
+        padding: 0,
         marginBottom: 2.5,
         borderRadius: 3,
         backgroundColor: '#199dc9'

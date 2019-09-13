@@ -16,17 +16,17 @@ const Nav = props => (
                     <Text style={[ t.opt, { color: '#111111' } ]}>About llamaHub</Text>
                 </View>
                 <View style={[ g.f, g.abs, u.linkIcon ]}>
-                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } />
+                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } iconAction={() => props.nav('About')} />
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => Platform.OS === 'ios' ? Linking.openURL('https://llamahubapp.com/') : Linking.openURL('https://llamahubapp.com/')}>
+            <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => Platform.OS === 'ios' ? Linking.openURL('https://llamahubapp.com') : Linking.openURL('https://play.google.com/store/apps/details?id=com.llamahubapp.llamahub')}>
                 <View style={[ g.f_r, g.r_cv, { flex: 1 } ]}>
                     <Icon name={ 'star' } size={ 20 } color={ '#EDAF49' } />
                     <Text style={[ t.opt, { color: '#111111' } ]}>Rate Our App</Text>
                 </View>
                 <View style={[ g.f, g.abs, u.linkIcon ]}>
-                    <Icon name={ 'external-link-alt' } size={ 16 } color={ '#db8d2b' } />
+                    <Icon name={ 'external-link-alt' } size={ 16 } color={ '#db8d2b' } iconAction={() => Platform.OS === 'ios' ? Linking.openURL('https://llamahubapp.com') : Linking.openURL('https://play.google.com/store/apps/details?id=com.llamahubapp.llamahub')} />
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => props.nav('Privacy')}>
@@ -35,16 +35,16 @@ const Nav = props => (
                     <Text style={[ t.opt, { color: '#111111' } ]}>Privacy Policy</Text>
                 </View>
                 <View style={[ g.f, g.abs, u.linkIcon ]}>
-                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } />
+                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } iconAction={() => props.nav('Privacy')} />
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => Linking.openURL('https://llamahubapp.com/contact/')}>
+            <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => Linking.openURL('https://llamahubapp.com/contact')}>
                 <View style={[ g.f_r, g.r_cv, { flex: 1 } ]}>
                     <Icon name={ 'smile' } size={ 20 } color={ '#EDAF49' } />
                     <Text style={[ t.opt, { color: '#111111' } ]}>Contact Support</Text>
                 </View>
                 <View style={[ g.f, g.abs, u.linkIcon ]}>
-                    <Icon name={ 'external-link-alt' } size={ 16 } color={ '#db8d2b' } />
+                    <Icon name={ 'external-link-alt' } size={ 16 } color={ '#db8d2b' } iconAction={() => Linking.openURL('https://llamahubapp.com/contact')} />
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={[ g.f_r, g.r_cv, u.card, u.link ]} onPress={() => props.nav('GiveawayRules')}>
@@ -53,7 +53,7 @@ const Nav = props => (
                     <Text style={[ t.opt, { color: '#111111' } ]}>Giveaway Rules</Text>
                 </View>
                 <View style={[ g.f, g.abs, u.linkIcon ]}>
-                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } />
+                    <Icon name={ 'chevron-right' } size={ 16 } color={ '#db8d2b' } iconAction={() => props.nav('GiveawayRules')} />
                 </View>
             </TouchableOpacity>
         </View>
