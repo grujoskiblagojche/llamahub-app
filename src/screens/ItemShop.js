@@ -121,14 +121,14 @@ export default class ItemShop extends React.Component {
                     itemShop: (type == 'all') ? [...prevState.featured, ...prevState.daily] : [...prevState[type]]
                 }
             })
-        }, 380);
+        }, 360);
     }
     
     render() {
         let shopItemsOutput = (this.state.itemShop.length > 0) ? this.state.itemShop.map((item, i) => (
             <View key={ i } style={{ flex: 1 }}>
                 <TouchableOpacity style={{ position: 'absolute', top: Dimensions.get('window').width - 57, right: 0, maxHeight: 42, zIndex: 500, backgroundColor: 'rgba(0,0,0,0.6)' }}>
-                    <Icon name={ 'grin-stars' } size={ 20 } color={ !this.toggleLike(item.offer) ? '#666' : '#ed1f55' } iconAction={() => this.likeHandler(item) } />
+                    <Icon name={ 'grin-stars' } size={ 24 } color={ !this.toggleLike(item.offer) ? '#666' : '#FFD166' } iconAction={() => this.likeHandler(item) } />
                 </TouchableOpacity>
 
                 <ProgressiveImg
@@ -183,7 +183,7 @@ export default class ItemShop extends React.Component {
             <View style={ g.app }>
                 <Header title={ 'Item Shop' } back={ true } navigation={ this.props.navigation } />
                 <View style={[ g.f_r, g.r_ch, { flex: 1, alignItems: 'flex-start', position: 'relative' }]}>
-                    { (this.state.itemShop.length > 0) ?
+                    { (this.state.featured.length > 0) ?
                         <TouchableOpacity style={{ position: 'absolute', top: 85, right: 0, zIndex: 50 }}>
                             <View style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
                                 <Animated.View
@@ -210,12 +210,12 @@ export default class ItemShop extends React.Component {
                             backgroundColor: 'rgba(0,0,0,0.6)',
                             padding: 4,
                             opacity: this.state.subNavOpacity,
-                            zIndex: 60,
+                            zIndex: this.state.subNavOpened ? 60 : 0,
                             transform: [
                                 {
                                     translateY: this.state.subNavOpacity.interpolate({
                                         inputRange: [0, 1],
-                                        outputRange: [162, 132]
+                                        outputRange: [164, 134]
                                     })
                                 }
                             ]

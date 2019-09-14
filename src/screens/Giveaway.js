@@ -37,11 +37,12 @@ export default class Giveaway extends React.Component {
     }
 
     async componentDidMount() {
+        await AsyncStorage.removeItem('ads');
+
         this.setCounterTime();
         await this._checkWinners();
         await this._checkEnrollment();
         // AdMob
-        await this._prepareAds();
         await this._checkWatchedAds();
     }
 
@@ -112,11 +113,17 @@ export default class Giveaway extends React.Component {
     }
 
     _prepareAds = async () => {
-        const { unitID } = Platform.OS === 'ios' ? 'ca-app-pub-1049504034926853/3144425559' : 'ca-app-pub-1049504034926853/7298668261';
-        AdMobRewarded.setAdUnitID(unitID);
-        AdMobRewarded.setTestDeviceID('EMULATOR');
-        AdMobRewarded.addEventListener('rewardedVideoDidRewardUser', this._rewardUser );
-        await AdMobRewarded.requestAdAsync();
+        try {
+            const id = Platform.OS === 'ios' ? 'ca-app-pub-1049504034926853/3144425559' : 'ca-app-pub-1049504034926853/7298668261';
+            // const test_id = Platform.OS === 'ios' ? 'ca-app-pub-3940256099942544/1712485313' : 'ca-app-pub-3940256099942544/5224354917';
+            AdMobRewarded.setAdUnitID(id);
+            // AdMobRewarded.setTestDeviceID('EMULATOR');
+            AdMobRewarded.addEventListener('rewardedVideoDidRewardUser', this._rewardUser );
+            await AdMobRewarded.requestAdAsync();
+        } catch (e) {
+            // alert(e);
+        }
+        
     }
 
     _checkWatchedAds = async () => {
@@ -170,9 +177,11 @@ export default class Giveaway extends React.Component {
     }
 
     _showAd = async () => {
+        await this._prepareAds();
+
         let ready = await AdMobRewarded.getIsReadyAsync();
         if (ready) {
-            AdMobRewarded.showAdAsync();
+            await AdMobRewarded.showAdAsync();
         } else {
             this.setState({
                 ads: {
@@ -212,9 +221,9 @@ export default class Giveaway extends React.Component {
                                 { this.state.inputError ? <Text style={ t.error }>{ this.state.inputError }</Text> : null }
                             </View> : enrolledMessageOutput }
 
-                        { (this.state.epicUser && this.state.ads.watched == 3) ? <Button value='Enroll Now' btnAction={ this.enrollUserHandler } /> : null }
+                        { (this.state.epicUser && this.state.ads.watched == 5) ? <Button value='Enroll Now' btnAction={ this.enrollUserHandler } /> : null }
                         
-                        { (this.state.ads.watched < 3 && !this.state.userConfig.isEnrolled) ? <Button value={`Watch Ads To Enroll ${ ` `, this.state.ads.watched }/3` } btnAction={ this._showAd } ad={ true } /> : null }
+                        { (this.state.ads.watched < 6 && !this.state.userConfig.isEnrolled) ? <Button value={`Watch Ads To Enroll ${ ` `, this.state.ads.watched }/5` } btnAction={ this._showAd } ad={ true } /> : null }
                         { (this.state.userConfig.isEnrolled) ? <Button value={`Keep Watching Ads To Support` } btnAction={ this._showAd } ad={ true } /> : null }
 
                         <View style={{ marginTop: 10 }}>

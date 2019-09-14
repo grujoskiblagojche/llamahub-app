@@ -24,7 +24,7 @@ export default class GiveawayRules extends React.Component {
                             <Banner content={ 'How Giveaway Works?' } />
 
                             <View style={[ g.f_r, { marginTop: 10, marginBottom: 20 } ]}>
-                                <Text style={ t.text }>Giveaway is a reward service made for our users. We will send a Free Gift to one random user each Friday chosen from our service. Picking is 100% random and we do not have any way of manipulating it.</Text>
+                                <Text style={ t.text }>Giveaway is a reward system made for our users. We will send a Free Gift to one random user each Friday chosen from our service.</Text>
                             </View>
                             
                             <View style={[ g.f_r, { marginLeft: 10 } ]}>
@@ -58,10 +58,6 @@ export default class GiveawayRules extends React.Component {
                             <View style={[ g.f_r, { marginLeft: 10 } ]}>
                                 <Icon name={ 'dot-circle' } size={ 10 } color={ '#666' } itemIcon={ true } />
                                 <Text style={[ t.text, { paddingRight: 30, marginBottom: 10 } ]}>Any Item from the Store up to 1,200 vBucks</Text>
-                            </View>
-                            <View style={[ g.f_r, { marginLeft: 10 } ]}>
-                                <Icon name={ 'dot-circle' } size={ 10 } color={ '#666' } itemIcon={ true } />
-                                <Text style={[ t.text, { paddingRight: 30, marginBottom: 10 } ]}>1,200 vBucks sent on your account</Text>
                             </View>
                             <View style={[ g.f_r, { marginLeft: 10 } ]}>
                                 <Icon name={ 'dot-circle' } size={ 10 } color={ '#666' } itemIcon={ true } />

@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://yi-49k.llamahub.llamahub-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.yi-49k.llamahub.llamahub-app.exp.direct",
+  "ngrokPid": 15372
 }
