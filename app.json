@@ -10,7 +10,7 @@
       "ios",
       "android"
     ],
-    "version": "1.1.0",
+    "version": "1.1.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -29,8 +29,8 @@
       "versionCode": 2
     },
     "ios": {
-      "bundleIdentifier": "com.llamahubapp.llamahub",
-      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.llamahubapp.llamahub.fortnite",
+      "buildNumber": "1.1.2",
       "supportsTablet": false
     }
   }

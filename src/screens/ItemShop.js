@@ -34,6 +34,7 @@ export default class ItemShop extends React.Component {
     }
 
     async componentDidMount() {
+        AsyncStorage.removeItem('itemShop');
         await this._checkUpdate();
     }
 
