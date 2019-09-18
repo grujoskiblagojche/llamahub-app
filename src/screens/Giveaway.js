@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage, ActivityIndicator, Dimensions, View, Text, Image, ScrollView, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { AsyncStorage, ActivityIndicator, Dimensions, View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { AdMobRewarded } from 'expo-ads-admob';
 
 import { cloudHttp } from '../../axiosConfig';
@@ -37,8 +37,6 @@ export default class Giveaway extends React.Component {
     }
 
     async componentDidMount() {
-        await AsyncStorage.removeItem('ads');
-
         this.setCounterTime();
         await this._checkWinners();
         await this._checkEnrollment();
@@ -114,9 +112,7 @@ export default class Giveaway extends React.Component {
 
     _prepareAds = async () => {
         try {
-            const id = Platform.OS === 'ios' ? 'ca-app-pub-1049504034926853/3144425559' : 'ca-app-pub-1049504034926853/7298668261';
-            // const test_id = Platform.OS === 'ios' ? 'ca-app-pub-3940256099942544/1712485313' : 'ca-app-pub-3940256099942544/5224354917';
-            AdMobRewarded.setAdUnitID(id);
+            AdMobRewarded.setAdUnitID('ca-app-pub-5616625432965827/1704382617');
             // AdMobRewarded.setTestDeviceID('EMULATOR');
             AdMobRewarded.addEventListener('rewardedVideoDidRewardUser', this._rewardUser );
             await AdMobRewarded.requestAdAsync();
